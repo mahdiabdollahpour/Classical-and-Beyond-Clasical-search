@@ -1,5 +1,9 @@
 package SearchAlgorithms;
 
+import ProblemSolving.Action;
+import ProblemSolving.Node;
+import ProblemSolving.Problem;
+
 import java.util.ArrayList;
 
 public class DFS extends Search {
@@ -21,10 +25,16 @@ public class DFS extends Search {
 
     @Override
     public ArrayList<Node> expand(Node node) {
+
+        expandedNodesNum++;
+
         ArrayList<Node> nodes = new ArrayList<>();
-        ArrayList<Action> actions = node.state.getActions();
+        ArrayList<Action> actions = node.getState().getActions();
         for (int i = 0; i < actions.size(); i++) {
-            nodes.add(new Node(p.transitionModel(node.getState(), actions.get(i))));
+            Action action = actions.get(i);
+            int pathCost = node.getPathCost() + action.getStepCost();
+
+            nodes.add(new Node(p.transitionModel(node.getState(), action), node, pathCost, node.getPathCost() + 1));
         }
         return nodes;
     }

@@ -1,7 +1,7 @@
 package ProblemSolving;
 
 public abstract class ProblemSolvingAgent {
-    abstract State search();
+    protected abstract Solution search();
 
     protected Boolean searchMethod;
     protected Problem p;

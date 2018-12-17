@@ -26,14 +26,15 @@ public class LimitedDepthDFS extends Search {
 
     @Override
     public ArrayList<Node> expand(Node node) {
+        expandedNodesNum++;
 
         ArrayList<Node> nodes = new ArrayList<>();
         if (node.getPathCost() < limit) {
-            ArrayList<Action> actions = node.state.getActions();
+            ArrayList<Action> actions = node.getState().getActions();
             for (int i = 0; i < actions.size(); i++) {
                 Action action = actions.get(i);
-
-                nodes.add(new Node(p.transitionModel(node.getState(), action), null, node.getPathCost() + 1));
+                int pathCost = node.getPathCost() + action.getStepCost();
+                nodes.add(new Node(p.transitionModel(node.getState(), action), node, pathCost, node.getPathCost() + 1));
             }
         }
         return nodes;

@@ -1,10 +1,7 @@
 package SearchAlgorithms;
-
 import ProblemSolving.Node;
 import ProblemSolving.Problem;
-import ProblemSolving.State;
-
-import java.util.ArrayList;
+import java.util.PriorityQueue;
 
 public abstract class BestFirstSearch extends Search{
     public BestFirstSearch(Problem p, Boolean graphSearch) {
@@ -13,17 +10,14 @@ public abstract class BestFirstSearch extends Search{
 
     @Override
     public Node getLeaf() {
-        return null;
+        return (Node) ((PriorityQueue) frontier).poll();
     }
 
-    @Override
-    public ArrayList<Node> expand(Node node) {
-        return null;
-    }
 
     @Override
     public void addToFrontier(Node node) {
-
+        frontier.add(node);
     }
-    protected abstract int getH(State state);
+
+
 }

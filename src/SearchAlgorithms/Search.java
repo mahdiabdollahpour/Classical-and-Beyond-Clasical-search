@@ -1,27 +1,36 @@
 package SearchAlgorithms;
 
-import ProblemSolving.Node;
-import ProblemSolving.Problem;
-import ProblemSolving.ProblemSolvingAgent;
-import ProblemSolving.State;
+import ProblemSolving.*;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
 public abstract class Search extends ProblemSolvingAgent {
+    protected int expandedNodesNum;
+    protected int visitedNodesNum;
+    protected int maxNumberOfStoredNodes;
+
     protected List<Node> frontier;
 
     protected HashSet<Node> explored;
 
+
     public abstract Node getLeaf();
 
-    public State search() {
+    public Solution search() {
+        expandedNodesNum = 0;
+        visitedNodesNum = 0;
+        maxNumberOfStoredNodes = 0;
         if (searchMethod) {
             return graphSearch();
         } else {
             return treeSearch();
         }
+    }
+
+    public void updateMaxNumebrOfStoredNodes() {
+        maxNumberOfStoredNodes = Math.max(maxNumberOfStoredNodes, frontier.size() + explored.size());
     }
 
     public abstract ArrayList<Node> expand(Node node);
@@ -36,16 +45,17 @@ public abstract class Search extends ProblemSolvingAgent {
         }
     }
 
-    public State graphSearch() {
-        frontier.add(new Node(p.getInitialState()));
+
+    public Solution graphSearch() {
+        frontier.add(new Node(p.getInitialState(), null, 0));
         explored = new HashSet<>();
         while (true) {
             if (frontier.isEmpty()) {
                 return null;
             }
             Node node = getLeaf();
-            if (p.goalTest(node.state)) {
-                return node.state;
+            if (p.goalTest(node.getState())) {
+                return new Solution(node, expandedNodesNum, visitedNodesNum, maxNumberOfStoredNodes);
             }
             explored.add(node);
             ArrayList<Node> newNodes = expand(node);
@@ -54,21 +64,23 @@ public abstract class Search extends ProblemSolvingAgent {
                     addToFrontier(node1);
                 }
             });
+            updateMaxNumebrOfStoredNodes();
 
         }
 
     }
 
-    public State treeSearch() {
+    public Solution treeSearch() {
         frontier = new ArrayList<>();
-        frontier.add(new Node(p.getInitialState()));
+        frontier.add(new Node(p.getInitialState(), null, 0));
+        updateMaxNumebrOfStoredNodes();
         while (true) {
             if (frontier.isEmpty()) {
                 return null;
             }
             Node node = getLeaf();
-            if (p.goalTest(node.state)) {
-                return node.state;
+            if (p.goalTest(node.getState())) {
+                return new Solution(node, expandedNodesNum, visitedNodesNum, maxNumberOfStoredNodes);
             }
             ArrayList<Node> newNodes = expand(node);
             newNodes.forEach(node1 -> {
@@ -76,7 +88,10 @@ public abstract class Search extends ProblemSolvingAgent {
                     addToFrontier(node1);
                 }
             });
+            updateMaxNumebrOfStoredNodes();
         }
 
     }
+
+
 }

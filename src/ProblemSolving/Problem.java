@@ -13,5 +13,7 @@ public abstract class Problem {
 
     public abstract State transitionModel(State state, Action action);
 
+    public abstract int getH(State state);
+
 
 }

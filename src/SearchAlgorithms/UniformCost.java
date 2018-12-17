@@ -3,6 +3,7 @@ package SearchAlgorithms;
 import ProblemSolving.Action;
 import ProblemSolving.Node;
 import ProblemSolving.Problem;
+import ProblemSolving.State;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,11 +22,15 @@ public class UniformCost extends Search {
 
     @Override
     public ArrayList<Node> expand(Node node) {
+        expandedNodesNum++;
+
         ArrayList<Node> nodes = new ArrayList<>();
-        ArrayList<Action> actions = node.state.getActions();
+        ArrayList<Action> actions = node.getState().getActions();
         for (int i = 0; i < actions.size(); i++) {
             Action action = actions.get(i);
-            nodes.add(new Node(p.transitionModel(node.getState(), action), null, node.getPathCost() + action.getStepCost()));
+            State next = p.transitionModel(node.getState(), action);
+            int pathCost = node.getPathCost() + action.getStepCost();
+            nodes.add(new Node(next, node, pathCost, pathCost));
         }
         return nodes;
     }
