@@ -18,14 +18,15 @@ public class Solution {
     }
 
     public ArrayList<State> makeSolution(Node node) {
-        ArrayList<State> nodes = new ArrayList<>();
+        ArrayList<State> pathStates = new ArrayList<>();
 
+        pathCost = node.getPathCost();
         while (node != null) {
-            nodes.add(0, node.getState());
-            pathCost += node.getPathCost();
+            pathStates.add(0, node.getState());
             node = node.getParent();
         }
-        return nodes;
+//        System.out.println(pathStates.size());
+        return pathStates;
     }
 
     @Override

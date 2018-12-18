@@ -6,13 +6,14 @@ import ProblemSolving.Problem;
 import ProblemSolving.State;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.PriorityQueue;
 
 public class UniformCost extends Search {
     public UniformCost(Problem p, Boolean graphSearch) {
         super(p, graphSearch);
-        frontier = (List<Node>) new PriorityQueue<Node>();
+        frontier =  new PriorityQueue<Node>();
     }
 
     @Override

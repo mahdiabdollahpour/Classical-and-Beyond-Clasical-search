@@ -17,7 +17,7 @@ public class DFS extends Search {
     @Override
     public Node getLeaf() {
         if (!frontier.isEmpty()) {
-            return frontier.get(frontier.size() - 1);
+            return ((ArrayList<Node>) frontier).get(frontier.size() - 1);
         } else {
             return null;
         }

@@ -3,6 +3,7 @@ package SearchAlgorithms;
 import ProblemSolving.*;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 
@@ -11,7 +12,7 @@ public abstract class Search extends ProblemSolvingAgent {
     protected int visitedNodesNum;
     protected int maxNumberOfStoredNodes;
 
-    protected List<Node> frontier;
+    protected Collection<Node> frontier;
 
     protected HashSet<Node> explored;
 
@@ -46,14 +47,16 @@ public abstract class Search extends ProblemSolvingAgent {
     }
 
 
-    public Solution graphSearch() {
-        frontier.add(new Node(p.getInitialState(), null, 0));
+    private Solution graphSearch() {
+        frontier.add(new Node(p.getInitialState(), null, 0,0));
         explored = new HashSet<>();
         while (true) {
+//            System.out.println("hdjkfhkdjfhkjd");
             if (frontier.isEmpty()) {
                 return null;
             }
             Node node = getLeaf();
+//            System.out.println(node.getState().getName());
             if (p.goalTest(node.getState())) {
                 return new Solution(node, expandedNodesNum, visitedNodesNum, maxNumberOfStoredNodes);
             }
@@ -70,9 +73,9 @@ public abstract class Search extends ProblemSolvingAgent {
 
     }
 
-    public Solution treeSearch() {
+    private Solution treeSearch() {
         frontier = new ArrayList<>();
-        frontier.add(new Node(p.getInitialState(), null, 0));
+        frontier.add(new Node(p.getInitialState(), null, 0,0));
         updateMaxNumebrOfStoredNodes();
         while (true) {
             if (frontier.isEmpty()) {

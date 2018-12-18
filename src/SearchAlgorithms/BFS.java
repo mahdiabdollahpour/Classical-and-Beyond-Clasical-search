@@ -18,7 +18,10 @@ public class BFS extends Search {
     @Override
     public Node getLeaf() {
         if (!frontier.isEmpty()) {
-            return frontier.get(0);
+
+            Node node = ((ArrayList<Node>) frontier).get(0);
+            frontier.remove(0);
+            return node;
         } else {
             return null;
         }
@@ -32,7 +35,7 @@ public class BFS extends Search {
         for (int i = 0; i < actions.size(); i++) {
 
             int pathCost = node.getPathCost() + actions.get(i).getStepCost();
-            nodes.add(new Node(p.transitionModel(node.getState(), actions.get(i)), node, pathCost, node.getPathCost() + 1));
+            nodes.add(new Node(p.transitionModel(node.getState(), actions.get(i)), node, pathCost, 0));
         }
         return nodes;
     }
