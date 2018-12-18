@@ -1,4 +1,4 @@
-package ProblemSolving;
+package ClassicalSearch.ProblemSolving;
 
 import java.util.ArrayList;
 import java.util.Objects;

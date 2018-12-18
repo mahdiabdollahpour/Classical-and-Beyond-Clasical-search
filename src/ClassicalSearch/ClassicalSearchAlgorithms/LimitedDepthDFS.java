@@ -1,8 +1,8 @@
-package SearchAlgorithms;
+package ClassicalSearch.ClassicalSearchAlgorithms;
 
-import ProblemSolving.Action;
-import ProblemSolving.Node;
-import ProblemSolving.Problem;
+import ClassicalSearch.ProblemSolving.Action;
+import ClassicalSearch.ProblemSolving.Node;
+import ClassicalSearch.ProblemSolving.Problem;
 
 import java.util.ArrayList;
 
@@ -18,7 +18,9 @@ public class LimitedDepthDFS extends Search {
     @Override
     public Node getLeaf() {
         if (!frontier.isEmpty()) {
-            return ((ArrayList<Node>) frontier).get(frontier.size() - 1);
+            Node node = ((ArrayList<Node>) frontier).get(frontier.size() - 1);
+            frontier.remove(node);
+            return node;
         } else {
             return null;
         }

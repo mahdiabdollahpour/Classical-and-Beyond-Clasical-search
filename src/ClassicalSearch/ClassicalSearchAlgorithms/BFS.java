@@ -1,8 +1,8 @@
-package SearchAlgorithms;
+package ClassicalSearch.ClassicalSearchAlgorithms;
 
-import ProblemSolving.Action;
-import ProblemSolving.Node;
-import ProblemSolving.Problem;
+import ClassicalSearch.ProblemSolving.Action;
+import ClassicalSearch.ProblemSolving.Node;
+import ClassicalSearch.ProblemSolving.Problem;
 
 import java.util.ArrayList;
 

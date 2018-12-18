@@ -1,7 +1,7 @@
-package ProblemSolving;
+package ClassicalSearch.ProblemSolving;
 
 public abstract class ProblemSolvingAgent {
-    protected abstract Solution search();
+    public abstract Solution search();
 
     protected Boolean searchMethod;
     protected Problem p;

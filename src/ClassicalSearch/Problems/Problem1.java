@@ -1,8 +1,8 @@
-package Problems;
+package ClassicalSearch.Problems;
 
-import ProblemSolving.Action;
-import ProblemSolving.Problem;
-import ProblemSolving.State;
+import ClassicalSearch.ProblemSolving.Action;
+import ClassicalSearch.ProblemSolving.Problem;
+import ClassicalSearch.ProblemSolving.State;
 
 import java.util.ArrayList;
 

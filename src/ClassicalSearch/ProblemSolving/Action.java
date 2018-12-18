@@ -1,4 +1,4 @@
-package ProblemSolving;
+package ClassicalSearch.ProblemSolving;
 
 public class Action {
 

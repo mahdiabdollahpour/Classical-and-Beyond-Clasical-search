@@ -1,13 +1,11 @@
-package SearchAlgorithms;
+package ClassicalSearch.ClassicalSearchAlgorithms;
 
-import ProblemSolving.Action;
-import ProblemSolving.Node;
-import ProblemSolving.Problem;
-import ProblemSolving.State;
+import ClassicalSearch.ProblemSolving.Action;
+import ClassicalSearch.ProblemSolving.Node;
+import ClassicalSearch.ProblemSolving.Problem;
+import ClassicalSearch.ProblemSolving.State;
 
 import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
 import java.util.PriorityQueue;
 
 public class UniformCost extends Search {
