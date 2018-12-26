@@ -1,4 +1,4 @@
-package LocalSearchs.LocalSearchAlgorithms;
+package LocalSearchs.LocalSearchAlgorithms.GeneticAlgorithm;
 
 import LocalSearchs.State;
 

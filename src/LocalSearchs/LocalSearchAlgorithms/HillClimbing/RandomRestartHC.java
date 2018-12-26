@@ -1,5 +1,6 @@
-package LocalSearchs.LocalSearchAlgorithms;
+package LocalSearchs.LocalSearchAlgorithms.HillClimbing;
 
+import LocalSearchs.LocalSearchAlgorithms.LocalSearch;
 import LocalSearchs.Problem;
 import LocalSearchs.Solution;
 

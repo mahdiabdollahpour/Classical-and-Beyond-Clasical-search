@@ -1,6 +1,7 @@
-package LocalSearchs.LocalSearchAlgorithms;
+package LocalSearchs.LocalSearchAlgorithms.HillClimbing;
 
 
+import LocalSearchs.LocalSearchAlgorithms.LocalSearch;
 import LocalSearchs.Problem;
 import LocalSearchs.Solution;
 import LocalSearchs.State;
@@ -33,6 +34,8 @@ public class SimpleHC extends LocalSearch {
         State current = problem.getInitialState();
         while (true) {
             ArrayList<State> neighbors = problem.getNeighbors(current);
+            expandedStatesNumber++;
+            visitedStatesNumber+=neighbors.size();
             State next = chooseNode(neighbors, current);
             if (next == null) {
                 return new Solution(current, problem.stateValue(current));

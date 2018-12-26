@@ -21,6 +21,8 @@ public class SimulatedAnnealing extends LocalSearch {
                 return new Solution(current, problem.stateValue(current));
             }
             State next = getRandomNeighbor(current);
+            expandedStatesNumber++;
+            visitedStatesNumber += 1;
             double deltaE = problem.stateValue(next) - problem.stateValue(current);
             if (deltaE > 0) {
                 current = next;
@@ -31,11 +33,14 @@ public class SimulatedAnnealing extends LocalSearch {
                 }
             }
 
+
         }
     }
 
     private State getRandomNeighbor(State state) {
+        //TODO: I can do better
         ArrayList<State> neighbors = problem.getNeighbors(state);
+
         Random random = new Random(System.currentTimeMillis());
         return neighbors.get(random.nextInt() % neighbors.size());
     }

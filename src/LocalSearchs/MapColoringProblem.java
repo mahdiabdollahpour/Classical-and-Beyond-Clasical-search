@@ -1,6 +1,6 @@
 package LocalSearchs;
 
-import LocalSearchs.LocalSearchAlgorithms.Chromosome;
+import LocalSearchs.LocalSearchAlgorithms.GeneticAlgorithm.Chromosome;
 
 import java.util.ArrayList;
 import java.util.Arrays;
