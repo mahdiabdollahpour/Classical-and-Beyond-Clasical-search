@@ -1,5 +1,7 @@
 package LocalSearchs;
 
+import java.util.Arrays;
+
 public class Solution {
     private State state;
     private double score;
@@ -56,8 +58,12 @@ public class Solution {
     @Override
     public String toString() {
         return "Solution{" +
-                "state=" + state +
-                ", score=" + score +
+                "state=" + state + "\n"+
+                ", score=" + score + "\n"+
+                ", maxs=" + Arrays.toString(maxs) + "\n"+
+                ", mins=" + Arrays.toString(mins) + "\n"+
+                ", avgs=" + Arrays.toString(avgs) + "\n"+
+                ", iterationsTillOptimum=" + iterationsTillOptimum + "\n"+
                 '}';
     }
 }

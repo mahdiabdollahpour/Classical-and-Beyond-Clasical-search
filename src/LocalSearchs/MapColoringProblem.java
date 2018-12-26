@@ -167,10 +167,10 @@ public class MapColoringProblem extends Problem {
     @Override
     public double stateValue(State state) {
 
-        int val = 0;
+        double val = 0;
         int[] cols = state.getColors();
         boolean flag = state instanceof Chromosome;
-        int m = 0;
+        double m = 0;
         for (int i = 0; i < cities.size(); i++) {
             ArrayList<City> neighbors = cities.get(i).getHamsye();
             for (int i1 = 0; i1 < neighbors.size(); i1++) {
@@ -189,6 +189,6 @@ public class MapColoringProblem extends Problem {
 
             }
         }
-        return val / (m / 2);
+        return val / m ;
     }
 }
