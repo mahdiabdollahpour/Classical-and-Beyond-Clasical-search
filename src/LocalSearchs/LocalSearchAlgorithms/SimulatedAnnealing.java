@@ -1,6 +1,7 @@
 package LocalSearchs.LocalSearchAlgorithms;
 
 import LocalSearchs.Problem;
+import LocalSearchs.Solution;
 import LocalSearchs.State;
 
 import java.util.ArrayList;
@@ -12,15 +13,15 @@ public class SimulatedAnnealing extends LocalSearch {
     }
 
     @Override
-    public State getAnswer() {
+    public Solution getAnswer() {
         State current = problem.getInitialState();
         for (int i = 1; ; i++) {
-            long t = schedule(i);
-            if (t == 0) {
-                return current;
+            double t = schedule(i);
+            if (t < Double.MIN_VALUE * 2) {
+                return new Solution(current, problem.stateValue(current));
             }
             State next = getRandomNeighbor(current);
-            int deltaE = problem.stateValue(next) - problem.stateValue(current);
+            double deltaE = problem.stateValue(next) - problem.stateValue(current);
             if (deltaE > 0) {
                 current = next;
             } else {
@@ -39,8 +40,11 @@ public class SimulatedAnnealing extends LocalSearch {
         return neighbors.get(random.nextInt() % neighbors.size());
     }
 
-    private int schedule(int i) {
-        return 0;
+    private double t0 = 1;
+
+    private double schedule(int i) {
+        //TODO: implemet this
+        return t0 / (1 + Math.log(1 + i));
     }
 
 

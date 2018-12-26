@@ -7,6 +7,6 @@ public abstract class Problem {
 
     public abstract ArrayList<State> getNeighbors(State state);
 
-    public abstract int stateValue(State state);
+    public abstract double stateValue(State state);
 
 }

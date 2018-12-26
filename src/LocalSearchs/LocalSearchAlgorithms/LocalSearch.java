@@ -1,12 +1,13 @@
 package LocalSearchs.LocalSearchAlgorithms;
 
 import LocalSearchs.Problem;
+import LocalSearchs.Solution;
 import LocalSearchs.State;
 
 public abstract class LocalSearch {
     protected Problem problem;
 
-    public abstract State getAnswer();
+    public abstract Solution getAnswer();
 
     public int visitedStatesNumber, expandedStatesNumber;
 

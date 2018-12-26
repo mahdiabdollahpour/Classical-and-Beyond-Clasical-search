@@ -39,8 +39,5 @@ public class DFS extends Search {
         return nodes;
     }
 
-    @Override
-    public void addToFrontier(Node node) {
-        frontier.add(node);
-    }
+
 }

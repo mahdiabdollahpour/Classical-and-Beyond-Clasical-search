@@ -14,10 +14,5 @@ public abstract class BestFirstSearch extends Search{
     }
 
 
-    @Override
-    public void addToFrontier(Node node) {
-        frontier.add(node);
-    }
-
 
 }

@@ -35,7 +35,10 @@ public abstract class Search extends ProblemSolvingAgent {
 
     protected abstract ArrayList<Node> expand(Node node);
 
-    protected abstract void addToFrontier(Node node);
+    public void addToFrontier(Node node) {
+        frontier.add(node);
+        visitedNodesNum++;
+    }
 
 
     public Search(Problem p, Boolean graphSearch) {

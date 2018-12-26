@@ -1,50 +1,87 @@
 package LocalSearchs.LocalSearchAlgorithms;
 
 import LocalSearchs.Problem;
+import LocalSearchs.Solution;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class GA {
     private Problem problem;
-    private double mutateProb;
-    private ArrayList<Individual> initialPopulation;
+    private double mutationRate;
+    private ArrayList<Chromosome> initialPopulation;
+    private int stringLength;
+    private Random random = new Random(System.currentTimeMillis());
 
-    private int fitnessFunction(Individual individual) {
-        return 0;
+    private double fitnessFunction(Chromosome chromosome) {
+        return problem.stateValue(chromosome);
+
     }
 
-    private Individual randomSelection(ArrayList<Individual> individuals) {
-        return null;
+    private Chromosome randomSelection(ArrayList<Chromosome> chromosomes) {
+        return chromosomes.get(random.nextInt(populationSize));
     }
 
-    private Individual crossOver(Individual father, Individual mother) {
-        return null;
+    private Chromosome crossOver(Chromosome father, Chromosome mother) {
+        int r = random.nextInt(stringLength);
+        StringBuilder newS = new StringBuilder("");
+        newS.append(father.getGens().substring(0, r));
+        newS.append(mother.getGens().substring(r, stringLength));
+        return new Chromosome(newS);
     }
 
-    private Individual mutate(Individual individual) {
-        return null;
+    private char getRandomGen() {
+        int r = random.nextInt(4);
+        return (char) ((int) ('a') + r);
+    }
+
+    private Chromosome mutate(Chromosome chromosome) {
+        int idx = random.nextInt(stringLength);
+        chromosome.getGens().deleteCharAt(idx);
+        chromosome.getGens().insert(idx, getRandomGen());
+        return chromosome;
     }
 
     private int populationSize;
 
-    public GA(Problem problem, int populationSize, int mutateProb) {
-        this.problem = problem;
-        this.populationSize = populationSize;
-        this.mutateProb = mutateProb;
+    private Chromosome getRandomChor() {
+        StringBuilder stringBuilder = new StringBuilder("");
+        for (int i = 0; i < stringLength; i++) {
+            stringBuilder.append(getRandomGen());
+        }
+        Chromosome chromosome = new Chromosome(stringBuilder);
+        return chromosome;
     }
 
-    public Individual getAnswer(int t) {
-        ArrayList<Individual> population = initialPopulation;
+    public GA(Problem problem, int populationSize, double mutationRate, int stringLength) {
+        this.problem = problem;
+        this.populationSize = populationSize;
+        this.mutationRate = mutationRate;
+        this.stringLength = stringLength;
+        initialPopulation = new ArrayList<>();
+        for (int i = 0; i < populationSize; i++) {
+            initialPopulation.add(getRandomChor());
+        }
+    }
+
+    public Solution getAnswer(int t) {
+        ArrayList<Chromosome> population = initialPopulation;
         for (int i = 0; i < t; i++) {
-            ArrayList<Individual> newPopulation = new ArrayList<>();
+            ArrayList<Chromosome> newPopulation = new ArrayList<>();
             for (int j = 0; j < populationSize; j++) {
-                Individual x = randomSelection(population);
-                Individual y = randomSelection(population);
-                Individual child = crossOver(x, y);
-                if (Math.random() < mutateProb) {
-                    child = mutate(child);
-                }
+                Chromosome x = randomSelection(population);
+                Chromosome y = randomSelection(population);
+                Chromosome child = crossOver(x, y);
+//                if (Math.random() < mutationRate) {
+//                    child = mutate(child);
+//                }
                 newPopulation.add(child);
+            }
+            int mutateNum = (int) (mutationRate * populationSize * stringLength);
+            for (int j = 0; j < mutateNum; j++) {
+                Chromosome x = newPopulation.remove(random.nextInt(populationSize));
+                Chromosome newc = mutate(x);
+                newPopulation.add(newc);
             }
             population = newPopulation;
 
@@ -52,17 +89,17 @@ public class GA {
         return getBest(population);
     }
 
-    private Individual getBest(ArrayList<Individual> population) {
-        int maxVal = Integer.MIN_VALUE;
-        Individual maxState = null;
+    private Solution getBest(ArrayList<Chromosome> population) {
+        double maxVal = Integer.MIN_VALUE;
+        Chromosome maxState = null;
         for (int i = 0; i < population.size(); i++) {
-            int val = fitnessFunction(population.get(i));
+            double val = fitnessFunction(population.get(i));
             if (val > maxVal) {
                 maxState = population.get(i);
                 maxVal = val;
             }
         }
-        return maxState;
+        return new Solution(maxState,maxVal);
     }
 
 
