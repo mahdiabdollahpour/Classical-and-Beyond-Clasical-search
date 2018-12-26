@@ -77,6 +77,7 @@ public class GA {
 //                }
                 newPopulation.add(child);
             }
+
             int mutateNum = (int) (mutationRate * populationSize * stringLength);
             for (int j = 0; j < mutateNum; j++) {
                 Chromosome x = newPopulation.remove(random.nextInt(populationSize));

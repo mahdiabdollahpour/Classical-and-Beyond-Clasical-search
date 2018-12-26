@@ -2,39 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4a17de7-4d82-45cc-a031-2f7dd5f4c0d1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/LocalSearchs/MapColoringProblem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/LocalSearchs/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LocalSearchs/LocalSearchAlgorithms/FirstChoiceHC.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LocalSearchs/LocalSearchAlgorithms/RandomRestartHC.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/LocalSearchs/LocalSearchAlgorithms/StochasticHC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AI_Project/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AI_Project/ProblemSolving/Action.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AI_Project/ProblemSolving/Node.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AI_Project/ProblemSolving/Problem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AI_Project/ProblemSolving/ProblemSolvingAgent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AI_Project/ProblemSolving/Solution.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AI_Project/ProblemSolving/State.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AI_Project/Problems/Problem1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AI_Project/SearchAlgorithms/AStar.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AI_Project/SearchAlgorithms/BFS.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AI_Project/SearchAlgorithms/BestFirstSearch.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AI_Project/SearchAlgorithms/DFS.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AI_Project/SearchAlgorithms/GreedyBestFirst.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AI_Project/SearchAlgorithms/IterativeDeepeningDFS.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AI_Project/SearchAlgorithms/LimitedDepthDFS.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AI_Project/SearchAlgorithms/Search.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AI_Project/SearchAlgorithms/UniformCost.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClassicalSearch/ClassicalSearchAlgorithms/BFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClassicalSearch/ClassicalSearchAlgorithms/BFS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClassicalSearch/ClassicalSearchAlgorithms/BestFirstSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClassicalSearch/ClassicalSearchAlgorithms/BestFirstSearch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClassicalSearch/ClassicalSearchAlgorithms/DFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClassicalSearch/ClassicalSearchAlgorithms/DFS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClassicalSearch/ClassicalSearchAlgorithms/LimitedDepthDFS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClassicalSearch/ClassicalSearchAlgorithms/LimitedDepthDFS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClassicalSearch/ClassicalSearchAlgorithms/Search.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClassicalSearch/ClassicalSearchAlgorithms/Search.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClassicalSearch/ClassicalSearchAlgorithms/UniformCost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClassicalSearch/ClassicalSearchAlgorithms/UniformCost.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LocalSearchs/LocalSearchAlgorithms/GA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LocalSearchs/LocalSearchAlgorithms/GA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LocalSearchs/LocalSearchAlgorithms/HillClimbing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LocalSearchs/LocalSearchAlgorithms/HillClimbing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LocalSearchs/LocalSearchAlgorithms/Individual.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LocalSearchs/LocalSearchAlgorithms/Chromosome.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LocalSearchs/LocalSearchAlgorithms/LocalSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LocalSearchs/LocalSearchAlgorithms/LocalSearch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LocalSearchs/LocalSearchAlgorithms/SimulatedAnnealing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LocalSearchs/LocalSearchAlgorithms/SimulatedAnnealing.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LocalSearchs/Problem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LocalSearchs/Problem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LocalSearchs/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LocalSearchs/State.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LocalSearchs/LocalSearchAlgorithms/HillClimbing.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LocalSearchs/LocalSearchAlgorithms/SimpleHC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LocalSearchs/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LocalSearchs/Solution.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -63,40 +37,42 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="ReadMe" value="1" />
-          <entry key="java" value="134" />
+          <entry key="java" value="144" />
           <entry key="md" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="134" />
+          <entry key="JAVA" value="144" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="30" />
-          <entry key="java" value="9297" />
+          <entry key="dummy" value="42" />
+          <entry key="java" value="9781" />
+          <entry key="txt" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="9297" />
-          <entry key="PLAIN_TEXT" value="30" />
+          <entry key="JAVA" value="9781" />
+          <entry key="PLAIN_TEXT" value="51" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/LocalSearchs/LocalSearchAlgorithms/HillClimbing.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/LocalSearchs/LocalSearchAlgorithms/SimpleHC.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="40" column="9" lean-forward="true" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
+            <state relative-caret-position="391">
+              <caret line="29" column="5" lean-forward="true" selection-start-line="18" selection-start-column="2" selection-end-line="29" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#getAnswer#0;class#HillClimbing#0" />
               </folding>
             </state>
           </provider>
@@ -105,8 +81,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/LocalSearchs/Problem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+            <state relative-caret-position="119">
+              <caret line="7" column="41" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -114,33 +90,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/LocalSearchs/MapColoringProblem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="167" column="17" selection-start-line="167" selection-start-column="17" selection-end-line="167" selection-end-column="17" />
+            <state relative-caret-position="276">
+              <caret line="149" column="36" selection-start-line="149" selection-start-column="36" selection-end-line="149" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="class#City#0;class#MapColoringProblem#0" />
-                <element signature="e#361#362#0" expanded="true" />
-                <element signature="e#396#397#0" expanded="true" />
                 <element signature="e#486#487#0" expanded="true" />
-                <element signature="e#523#524#0" expanded="true" />
-                <element signature="e#598#599#0" expanded="true" />
-                <element signature="e#658#659#0" expanded="true" />
+                <element signature="e#521#522#0" expanded="true" />
                 <element signature="method#MapColoringProblem#0;class#MapColoringProblem#0" />
                 <element signature="e#5515#5516#0" expanded="true" />
                 <element signature="e#5544#5545#0" expanded="true" />
-                <element signature="method#getNeighbors#0;class#MapColoringProblem#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/LocalSearchs/LocalSearchAlgorithms/SimulatedAnnealing.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="51" lean-forward="true" selection-start-line="51" selection-end-line="51" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="method#stateValue#0;class#MapColoringProblem#0" />
               </folding>
             </state>
           </provider>
@@ -149,8 +109,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/LocalSearchs/LocalSearchAlgorithms/LocalSearch.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+            <state relative-caret-position="102">
+              <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -159,40 +119,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ClassicalSearch/ClassicalSearchAlgorithms/Search.java">
+        <entry file="file://$PROJECT_DIR$/src/LocalSearchs/LocalSearchAlgorithms/Chromosome.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="9" selection-start-line="9" selection-end-line="10" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/LocalSearchs/LocalSearchAlgorithms/GA.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+            <state relative-caret-position="316">
+              <caret line="25" column="35" lean-forward="true" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ClassicalSearch/ProblemSolving/Solution.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="131" selection-start-line="11" selection-start-column="131" selection-end-line="11" selection-end-column="131" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/LocalSearchs/Solution.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -200,14 +133,57 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/LocalSearchs/State.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
+            <state relative-caret-position="255">
               <caret line="19" column="22" lean-forward="true" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/LocalSearchs/LocalSearchAlgorithms/FirstChoiceHC.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="310">
+              <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#162#163#0" expanded="true" />
+                <element signature="e#192#193#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/LocalSearchs/LocalSearchAlgorithms/RandomRestartHC.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="480">
+              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/LocalSearchs/Solution.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
               <folding>
                 <element signature="e#155#156#0" expanded="true" />
-                <element signature="e#184#185#0" expanded="true" />
-                <element signature="e#164#165#0" expanded="true" />
-                <element signature="e#200#201#0" expanded="true" />
+                <element signature="e#187#188#0" expanded="true" />
+                <element signature="e#215#216#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ClassicalSearch/ClassicalSearchAlgorithms/IterativeDeepeningDFS.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="7">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -228,10 +204,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Action.java" />
-        <option value="$PROJECT_DIR$/src/UniformCost.java" />
-        <option value="$PROJECT_DIR$/src/LimitedDepthDFS.java" />
-        <option value="$PROJECT_DIR$/src/ProblemSolver.java" />
         <option value="$PROJECT_DIR$/src/SearchingAgent.java" />
         <option value="$PROJECT_DIR$/src/ProblemSolvingAgent.java" />
         <option value="$PROJECT_DIR$/src/Search.java" />
@@ -271,14 +243,18 @@
         <option value="$PROJECT_DIR$/src/ClassicalSearch/ClassicalSearchAlgorithms/Search.java" />
         <option value="$PROJECT_DIR$/src/LocalSearchs/LocalSearchAlgorithms/Chromosome.java" />
         <option value="$PROJECT_DIR$/src/LocalSearchs/State.java" />
-        <option value="$PROJECT_DIR$/src/Test.java" />
-        <option value="$PROJECT_DIR$/src/LocalSearchs/Solution.java" />
         <option value="$PROJECT_DIR$/src/LocalSearchs/Problem.java" />
         <option value="$PROJECT_DIR$/src/LocalSearchs/MapColoringProblem.java" />
         <option value="$PROJECT_DIR$/src/LocalSearchs/LocalSearchAlgorithms/LocalSearch.java" />
         <option value="$PROJECT_DIR$/src/LocalSearchs/LocalSearchAlgorithms/SimulatedAnnealing.java" />
-        <option value="$PROJECT_DIR$/src/LocalSearchs/LocalSearchAlgorithms/GA.java" />
         <option value="$PROJECT_DIR$/src/LocalSearchs/LocalSearchAlgorithms/HillClimbing.java" />
+        <option value="$PROJECT_DIR$/src/Test.java" />
+        <option value="$PROJECT_DIR$/src/LocalSearchs/LocalSearchAlgorithms/GA.java" />
+        <option value="$PROJECT_DIR$/src/LocalSearchs/LocalSearchAlgorithms/SimpleHC.java" />
+        <option value="$PROJECT_DIR$/src/LocalSearchs/LocalSearchAlgorithms/StochasticHC.java" />
+        <option value="$PROJECT_DIR$/src/LocalSearchs/Solution.java" />
+        <option value="$PROJECT_DIR$/src/LocalSearchs/LocalSearchAlgorithms/RandomRestartHC.java" />
+        <option value="$PROJECT_DIR$/src/LocalSearchs/LocalSearchAlgorithms/FirstChoiceHC.java" />
       </list>
     </option>
   </component>
@@ -322,13 +298,6 @@
               <item name="AI_Project" type="b2602c69:ProjectViewProjectNode" />
               <item name="AI_Project" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ClassicalSearch" type="462c0819:PsiDirectoryNode" />
-              <item name="ClassicalSearchAlgorithms" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AI_Project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AI_Project" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="LocalSearchs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -350,7 +319,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545840675285" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545848845866" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -416,12 +385,20 @@
       <workItem from="1545127393412" duration="4811000" />
       <workItem from="1545137998898" duration="11093000" />
       <workItem from="1545214014441" duration="24000" />
-      <workItem from="1545818071096" duration="15988000" />
+      <workItem from="1545818071096" duration="20453000" />
     </task>
+    <task id="LOCAL-00001" summary="coded GA">
+      <created>1545840723572</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1545840723572</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48842000" />
+    <option name="totallyTimeSpent" value="53307000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -436,7 +413,7 @@
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22267206" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22267206" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -454,7 +431,7 @@
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.2508897" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50040483" side_tool="true" weight="0.2846975" />
       <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info active="true" anchor="bottom" id="Messages" order="11" visible="true" weight="0.3291815" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.3291815" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -502,10 +479,11 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="coded GA" />
+    <option name="LAST_COMMIT_MESSAGE" value="coded GA" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/algorithms/ID_DFS.java" />
-    <entry file="file://$PROJECT_DIR$/src/algorithms/DLS.java" />
-    <entry file="file://$PROJECT_DIR$/src/algorithms/DFS.java" />
     <entry file="file://$PROJECT_DIR$/src/algorithms/Bidirectional.java" />
     <entry file="file://$PROJECT_DIR$/src/algorithms/BFS.java" />
     <entry file="file://$PROJECT_DIR$/src/algorithms/AStar.java" />
@@ -637,13 +615,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClassicalSearch/ClassicalSearchAlgorithms/IterativeDeepeningDFS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ClassicalSearch/ClassicalSearchAlgorithms/GreedyBestFirst.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -679,28 +650,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="10" column="43" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LocalSearchs/LocalSearchAlgorithms/Chromosome.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="25" column="35" lean-forward="true" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#289#290#0" expanded="true" />
-            <element signature="e#327#328#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ClassicalSearch/ProblemSolving/Solution.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -708,68 +657,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LocalSearchs/State.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="19" column="22" lean-forward="true" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
-          <folding>
-            <element signature="e#155#156#0" expanded="true" />
-            <element signature="e#184#185#0" expanded="true" />
-            <element signature="e#164#165#0" expanded="true" />
-            <element signature="e#200#201#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LocalSearchs/Problem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LocalSearchs/MapColoringProblem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="167" column="17" selection-start-line="167" selection-start-column="17" selection-end-line="167" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="class#City#0;class#MapColoringProblem#0" />
-            <element signature="e#361#362#0" expanded="true" />
-            <element signature="e#396#397#0" expanded="true" />
-            <element signature="e#486#487#0" expanded="true" />
-            <element signature="e#523#524#0" expanded="true" />
-            <element signature="e#598#599#0" expanded="true" />
-            <element signature="e#658#659#0" expanded="true" />
-            <element signature="method#MapColoringProblem#0;class#MapColoringProblem#0" />
-            <element signature="e#5515#5516#0" expanded="true" />
-            <element signature="e#5544#5545#0" expanded="true" />
-            <element signature="method#getNeighbors#0;class#MapColoringProblem#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ClassicalSearch/ClassicalSearchAlgorithms/Search.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="9" selection-start-line="9" selection-end-line="10" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LocalSearchs/LocalSearchAlgorithms/LocalSearch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="30" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/LocalSearchs/Solution.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="18" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -783,22 +674,137 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LocalSearchs/LocalSearchAlgorithms/GA.java">
+    <entry file="file://$PROJECT_DIR$/src/Test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="15" column="18" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
+        <state relative-caret-position="187">
+          <caret line="11" column="46" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LocalSearchs/LocalSearchAlgorithms/HillClimbing.java">
+    <entry file="file://$PROJECT_DIR$/src/LocalSearchs/LocalSearchAlgorithms/GA.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="40" column="9" lean-forward="true" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
+        <state relative-caret-position="191">
+          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LocalSearchs/LocalSearchAlgorithms/StochasticHC.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="26" column="24" lean-forward="true" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#161#162#0" expanded="true" />
+            <element signature="e#191#192#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LocalSearchs/LocalSearchAlgorithms/SimpleHC.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="29" column="5" lean-forward="true" selection-start-line="18" selection-start-column="2" selection-end-line="29" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#getAnswer#0;class#HillClimbing#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LocalSearchs/Problem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="41" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LocalSearchs/LocalSearchAlgorithms/LocalSearch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LocalSearchs/LocalSearchAlgorithms/Chromosome.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="25" column="35" lean-forward="true" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClassicalSearch/ClassicalSearchAlgorithms/IterativeDeepeningDFS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LocalSearchs/Solution.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+          <folding>
+            <element signature="e#155#156#0" expanded="true" />
+            <element signature="e#187#188#0" expanded="true" />
+            <element signature="e#215#216#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LocalSearchs/LocalSearchAlgorithms/RandomRestartHC.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LocalSearchs/State.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="19" column="22" lean-forward="true" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LocalSearchs/MapColoringProblem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="149" column="36" selection-start-line="149" selection-start-column="36" selection-end-line="149" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="class#City#0;class#MapColoringProblem#0" />
+            <element signature="e#486#487#0" expanded="true" />
+            <element signature="e#521#522#0" expanded="true" />
+            <element signature="method#MapColoringProblem#0;class#MapColoringProblem#0" />
+            <element signature="e#5515#5516#0" expanded="true" />
+            <element signature="e#5544#5545#0" expanded="true" />
+            <element signature="method#stateValue#0;class#MapColoringProblem#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LocalSearchs/LocalSearchAlgorithms/FirstChoiceHC.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#162#163#0" expanded="true" />
+            <element signature="e#192#193#0" expanded="true" />
           </folding>
         </state>
       </provider>

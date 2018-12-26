@@ -7,16 +7,16 @@ import LocalSearchs.State;
 
 import java.util.ArrayList;
 
-public class HillClimbing extends LocalSearch {
-    private Problem problem;
+public class SimpleHC extends LocalSearch {
+    protected Problem problem;
 
-    public HillClimbing(Problem problem) {
+    public SimpleHC(Problem problem) {
         super(problem);
         this.problem = problem;
     }
 
 
-    private State chooseNode(ArrayList<State> neighbors, State now) {
+    protected State chooseNode(ArrayList<State> neighbors, State now) {
         double maxVal = problem.stateValue(now);
         State maxState = null;
         for (int i = 0; i < neighbors.size(); i++) {
