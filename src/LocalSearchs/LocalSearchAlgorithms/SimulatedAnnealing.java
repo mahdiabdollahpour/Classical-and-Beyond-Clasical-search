@@ -18,7 +18,7 @@ public class SimulatedAnnealing extends LocalSearch {
         for (int i = 1; ; i++) {
             double t = schedule(i);
             if (t < Double.MIN_VALUE * 2) {
-                return new Solution(current, problem.stateValue(current));
+                return new Solution(current, problem.stateValue(current),expandedStatesNumber,visitedStatesNumber);
             }
             State next = getRandomNeighbor(current);
             expandedStatesNumber++;

@@ -9,7 +9,7 @@ public abstract class LocalSearch {
 
     public abstract Solution getAnswer();
 
-    public int visitedStatesNumber, expandedStatesNumber;
+    protected int visitedStatesNumber, expandedStatesNumber;
 
     public LocalSearch(Problem problem) {
         this.problem = problem;

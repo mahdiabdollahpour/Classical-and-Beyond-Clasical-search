@@ -19,7 +19,7 @@ public class BFS extends Search {
     public Node getLeaf() {
         if (!frontier.isEmpty()) {
 
-            Node node = ((ArrayList<Node>) frontier).get(0);
+            Node node = ((ArrayList<Node>) frontier).remove(0);
             frontier.remove(0);
             return node;
         } else {

@@ -142,7 +142,7 @@ public class GA {
                 maxVal = val;
             }
         }
-        return new Solution(maxState, maxVal);
+        return new Solution(maxState, maxVal, true);
     }
 
 

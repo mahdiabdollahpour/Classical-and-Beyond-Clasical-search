@@ -1,14 +1,16 @@
 package ClassicalSearch.ProblemSolving;
 
-import java.util.ArrayList;
-import java.util.Objects;
+import java.util.*;
 
 public class State {
 
     private String name;
+    private int heuristicValue;
+    private ArrayList<Action> actions;
+    private int id;
 
     public int getHValue() {
-        return hValue;
+        return heuristicValue;
     }
 
     public String getName() {
@@ -20,26 +22,22 @@ public class State {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         State state = (State) o;
-        return id == state.id &&
-                Objects.equals(name, state.name);
+        return Objects.equals(name, state.name);
     }
 
 
-    public State(String name, int id, int hValue) {
+    public State(String name, int id, int heuristicValue) {
         this.name = name;
         this.id = id;
         actions = new ArrayList<>();
-        this.hValue = hValue;
+        this.heuristicValue = heuristicValue;
     }
 
-    private int hValue;
-    private ArrayList<Action> actions;
 
     public void addAction(Action action) {
         actions.add(action);
     }
 
-    private int id;
 
     @Override
     public String toString() {
@@ -48,7 +46,16 @@ public class State {
                 '}';
     }
 
+    boolean flag = false;
+
     public ArrayList<Action> getActions() {
+        if (!flag) {
+            ArrayList<Action> newList = new ArrayList<>(actions);
+            Collections.shuffle(newList);
+            actions = newList;
+//            System.out.println(actions);
+            flag = true;
+        }
         return actions;
     }
 }

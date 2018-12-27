@@ -62,12 +62,12 @@ public class Solution {
 
     @Override
     public String toString() {
-        return "Solution{" +
-                "states=" + states +
-                ", expandedNodesNum=" + expandedNodesNum +
-                ", visitedNodesNum=" + visitedNodesNum +
-                ", maxNumberOfStoredNodes=" + maxNumberOfStoredNodes +
-                ", pathCost=" + pathCost +
+        return "Solution{" + "\n"+
+                "states=" + states + "\n"+
+                ", expandedNodesNum=" + expandedNodesNum + "\n"+
+                ", visitedNodesNum=" + visitedNodesNum + "\n"+
+                ", maxNumberOfStoredNodes=" + maxNumberOfStoredNodes + "\n"+
+                ", pathCost=" + pathCost + "\n"+
                 '}';
     }
 }

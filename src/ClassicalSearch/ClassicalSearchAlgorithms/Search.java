@@ -13,7 +13,7 @@ public abstract class Search extends ProblemSolvingAgent {
 
     protected Collection<Node> frontier;
 
-    protected HashSet<Node> explored;
+    protected ArrayList<Node> explored;
 
 
     protected abstract Node getLeaf();
@@ -44,32 +44,34 @@ public abstract class Search extends ProblemSolvingAgent {
     public Search(Problem p, Boolean graphSearch) {
         super(p, graphSearch);
         if (graphSearch) {
-            explored = new HashSet<>();
+            explored = new ArrayList<>();
         }
     }
 
 
     private Solution graphSearch() {
         frontier.add(new Node(p.getInitialState(), null, 0, 0));
-        explored = new HashSet<>();
+//        explored = new HashSet<>();
         while (true) {
-//            System.out.println("hdjkfhkdjfhkjd");
             if (frontier.isEmpty()) {
                 return new Solution(null, expandedNodesNum, visitedNodesNum, maxNumberOfStoredNodes);
 
             }
+//            System.out.println(frontier);
             Node node = getLeaf();
+//            System.out.println(node.getState().getName());
 //            System.out.println(node.getState().getName());
             if (p.goalTest(node.getState())) {
                 return new Solution(node, expandedNodesNum, visitedNodesNum, maxNumberOfStoredNodes);
             }
             explored.add(node);
+//            System.out.println(explored);
             ArrayList<Node> newNodes = expand(node);
-            newNodes.forEach(node1 -> {
+            for (Node node1 : newNodes) {
                 if (!frontier.contains(node1) && !explored.contains(node1)) {
                     addToFrontier(node1);
                 }
-            });
+            }
             updateMaxNumebrOfStoredNodes();
 
         }

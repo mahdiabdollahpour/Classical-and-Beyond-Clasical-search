@@ -35,10 +35,10 @@ public class SimpleHC extends LocalSearch {
         while (true) {
             ArrayList<State> neighbors = problem.getNeighbors(current);
             expandedStatesNumber++;
-            visitedStatesNumber+=neighbors.size();
+            visitedStatesNumber += neighbors.size();
             State next = chooseNode(neighbors, current);
             if (next == null) {
-                return new Solution(current, problem.stateValue(current));
+                return new Solution(current, problem.stateValue(current), expandedStatesNumber, visitedStatesNumber);
             }
             current = next;
         }

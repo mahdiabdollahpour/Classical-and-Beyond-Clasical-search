@@ -25,7 +25,7 @@ public class GreedyBestFirst extends BestFirstSearch {
         for (int i = 0; i < actions.size(); i++) {
             Action action = actions.get(i);
             State next = p.transitionModel(node.getState(), action);
-            nodes.add(new Node(next, node, node.getPathCost() + action.getStepCost(), p.getH(next)));
+            nodes.add(new Node(next, node, node.getPathCost() + action.getStepCost(), p.getHeuristicValue(next)));
         }
         return nodes;
     }

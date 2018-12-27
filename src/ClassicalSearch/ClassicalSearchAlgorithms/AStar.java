@@ -25,7 +25,7 @@ public class AStar extends BestFirstSearch {
             State next = p.transitionModel(node.getState(), action);
             int pathCost = node.getPathCost() + action.getStepCost();
 
-            nodes.add(new Node(next, node, pathCost, node.getPathCost() + action.getStepCost() + p.getH(next)));
+            nodes.add(new Node(next, node, pathCost, node.getPathCost() + action.getStepCost() + p.getHeuristicValue(next)));
         }
         return nodes;
     }

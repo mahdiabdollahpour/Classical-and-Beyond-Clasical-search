@@ -60,8 +60,8 @@ public class Problem1 extends Problem {
         State neamt = new State("Neamt", 19, 234);
         states.add(neamt);
         arad.addAction(new Action(75, zerind));
-        arad.addAction(new Action(118, timisoara));
         arad.addAction(new Action(140, sibiu));
+        arad.addAction(new Action(118, timisoara));
 
 
         zerind.addAction(new Action(75, arad));
@@ -113,6 +113,12 @@ public class Problem1 extends Problem {
         bucharest.addAction(new Action(90, giurgiu));
         bucharest.addAction(new Action(85, urziceni));
 
+
+        pitesti.addAction(new Action(101,bucharest));
+        pitesti.addAction(new Action(97,riminciuVilcea));
+        pitesti.addAction(new Action(138,craiova));
+
+
         urziceni.addAction(new Action(85, bucharest));
         urziceni.addAction(new Action(98, hirsova));
         urziceni.addAction(new Action(142, vaslui));
@@ -138,7 +144,7 @@ public class Problem1 extends Problem {
     }
 
     @Override
-    public int getH(State state) {
+    public int getHeuristicValue(State state) {
         return state.getHValue();
     }
 }
