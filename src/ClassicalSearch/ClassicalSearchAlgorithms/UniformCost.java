@@ -16,7 +16,11 @@ public class UniformCost extends Search {
 
     @Override
     public Node getLeaf() {
-        return (Node) ((PriorityQueue) frontier).poll();
+//        System.out.println(frontier);
+        Node n = (Node) ((PriorityQueue) frontier).poll();
+//        System.out.println(n);
+        return n;
+
     }
 
     @Override
@@ -29,6 +33,7 @@ public class UniformCost extends Search {
             Action action = actions.get(i);
             State next = p.transitionModel(node.getState(), action);
             int pathCost = node.getPathCost() + action.getStepCost();
+//            System.out.println(pathCost);
             nodes.add(new Node(next, node, pathCost, pathCost));
         }
         return nodes;

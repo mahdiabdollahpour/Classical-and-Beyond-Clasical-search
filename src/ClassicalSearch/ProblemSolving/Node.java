@@ -13,7 +13,7 @@ public class Node implements Comparable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Node node = (Node) o;
-        return state.getName().equals(node.getState().getName());
+        return state.getName().equals(node.getState().getName()) && compareValue==node.compareValue;
     }
 
     public int getCompareValue() {
@@ -41,7 +41,8 @@ public class Node implements Comparable {
 
     @Override
     public int compareTo(Object o) {
-        return new Integer(compareValue).compareTo(((Node) o).getCompareValue());
+//        System.out.println("jhhj");
+        return Integer.compare(compareValue, ((Node) o).getCompareValue());
     }
 
 //    public Node(State state) {
@@ -52,7 +53,7 @@ public class Node implements Comparable {
     @Override
     public String toString() {
         return "Node{" +
-                "state=" + state +
+                "state=" + state + " = " + compareValue +
                 '}';
     }
 }

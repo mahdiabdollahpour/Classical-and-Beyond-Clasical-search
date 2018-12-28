@@ -41,9 +41,7 @@ public class State {
 
     @Override
     public String toString() {
-        return "State{" +
-                "name='" + name + '\'' +
-                '}';
+        return  name;
     }
 
     boolean flag = false;

@@ -93,7 +93,7 @@ public class Problem1 extends Problem {
         craiova.addAction(new Action(138, pitesti));
 
 
-        sibiu.addAction(new Action(75, riminciuVilcea));
+        sibiu.addAction(new Action(80, riminciuVilcea));
         sibiu.addAction(new Action(140, arad));
         sibiu.addAction(new Action(151, oradea));
         sibiu.addAction(new Action(99, fagaras));
