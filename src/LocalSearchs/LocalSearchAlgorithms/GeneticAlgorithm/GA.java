@@ -44,7 +44,7 @@ public class GA {
     }
 
     private char getRandomGen() {
-        int r = random.nextInt(4);
+        int r = random.nextInt(problem.getNumberOfColors());
         return (char) ((int) ('a') + r);
     }
 

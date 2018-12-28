@@ -1,5 +1,9 @@
 package LocalSearchs;
 
+import org.knowm.xchart.Histogram;
+import org.knowm.xchart.QuickChart;
+import org.knowm.xchart.SwingWrapper;
+
 import java.util.Arrays;
 
 public class Solution {
@@ -78,6 +82,21 @@ public class Solution {
         this(state, score, false);
         this.expandedStatesNumber = expandedStatesNumber;
         this.visitedStatesNumber = visitedStatesNumber;
+    }
+
+    public void showCharts() {
+        if(isGa) {
+            double XAxis[] = new double[maxs.length];
+            for (int i = 0; i < XAxis.length; i++) {
+                XAxis[i] = i + 1;
+            }
+            new SwingWrapper(QuickChart.getChart("Best Fitness", "n", "fitness", "best fitness", XAxis, maxs)).displayChart();
+            new SwingWrapper(QuickChart.getChart("Avg Fitness", "n", "fitness", "avg fitness", XAxis, avgs)).displayChart();
+            new SwingWrapper(QuickChart.getChart("Worst Fitness", "n", "fitness", "worst fitness", XAxis, mins)).displayChart();
+        }else {
+            System.out.println("This Option is for GA answer");
+        }
+
     }
 
     @Override

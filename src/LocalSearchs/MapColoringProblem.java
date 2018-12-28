@@ -3,192 +3,118 @@ package LocalSearchs;
 import LocalSearchs.LocalSearchAlgorithms.GeneticAlgorithm.Chromosome;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Random;
 
 public class MapColoringProblem extends Problem {
-    private ArrayList<City> cities;
-    private State initialState;
 
-    private static class City {
-        private String name;
+    public MapColoringProblem(int numberOfColors) {
+        super(numberOfColors);
+        nodes = new ArrayList<>();
+        GraphNode azerbaijanSharghi = new GraphNode("azarbaijansharghi");
+        nodes.add(azerbaijanSharghi);
+        GraphNode ardabil = new GraphNode("ardabil");
+        nodes.add(ardabil);
+        GraphNode azarGharbi = new GraphNode("azarGharbi");
+        nodes.add(azarGharbi);
+        GraphNode gilan = new GraphNode("gilan");
+        nodes.add(gilan);
+        GraphNode zanjan = new GraphNode("zanjan");
+        nodes.add(zanjan);
+        GraphNode kurdistan = new GraphNode("kurdistan");
+        nodes.add(kurdistan);
+        GraphNode hamadan = new GraphNode("hamadan");
+        nodes.add(hamadan);
+        GraphNode qazvin = new GraphNode("qazvin");
+        nodes.add(qazvin);
+        GraphNode kermanshah = new GraphNode("kermanshah");
+        nodes.add(kermanshah);
+        GraphNode alborz = new GraphNode("alborz");
+        nodes.add(alborz);
+        GraphNode mazandaran = new GraphNode("mazandaran");
+        nodes.add(mazandaran);
+        GraphNode tehran = new GraphNode("tehran");
+        nodes.add(tehran);
+        GraphNode markazi = new GraphNode("markazi");
+        nodes.add(markazi);
+        GraphNode lorestan = new GraphNode("lorestan");
+        nodes.add(lorestan);
+        GraphNode ilam = new GraphNode("ilam");
+        nodes.add(ilam);
+        GraphNode qom = new GraphNode("qom");
+        nodes.add(qom);
+        GraphNode golestan = new GraphNode("golestan");
+        nodes.add(golestan);
+        GraphNode isfahan = new GraphNode("isfahan");
+        nodes.add(isfahan);
+        GraphNode khuzestan = new GraphNode("khuzestan");
+        nodes.add(khuzestan);
+        GraphNode charmahal = new GraphNode("charmahaml");
+        nodes.add(charmahal);
+        GraphNode kohkilo = new GraphNode("kohkilo");
+        nodes.add(kohkilo);
+        GraphNode fars = new GraphNode("fars");
+        nodes.add(fars);
+        GraphNode yazd = new GraphNode("yazd");
+        nodes.add(yazd);
+        GraphNode southKhorasan = new GraphNode("southKhorasan");
+        nodes.add(southKhorasan);
+        GraphNode northKhorasan = new GraphNode("northKhorasan");
+        nodes.add(northKhorasan);
+        GraphNode razavi = new GraphNode("razavi");
+        nodes.add(razavi);
+        GraphNode kerman = new GraphNode("kerman");
+        nodes.add(kerman);
+        GraphNode hormozgan = new GraphNode("hormozgan");
+        nodes.add(hormozgan);
+        GraphNode bushehr = new GraphNode("bushehr");
+        nodes.add(bushehr);
+        GraphNode sistan = new GraphNode("sistan");
+        nodes.add(sistan);
+        GraphNode semnan = new GraphNode("semnan");
+        nodes.add(semnan);
 
-        public City(String name) {
-            this.name = name;
-            hamsye = new ArrayList<>();
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public ArrayList<City> getHamsye() {
-            return hamsye;
-        }
-
-        public void addHamsaye(City... cities) {
-            hamsye.addAll(Arrays.asList(cities));
-        }
-
-        private ArrayList<City> hamsye;
-    }
-
-    public MapColoringProblem() {
-        cities = new ArrayList<>();
-        City azerbaijanSharghi = new City("azarbaijansharghi");
-        cities.add(azerbaijanSharghi);
-        City ardabil = new City("ardabil");
-        cities.add(ardabil);
-        City azarGharbi = new City("azarGharbi");
-        cities.add(azarGharbi);
-        City gilan = new City("gilan");
-        cities.add(gilan);
-        City zanjan = new City("zanjan");
-        cities.add(zanjan);
-        City kurdistan = new City("kurdistan");
-        cities.add(kurdistan);
-        City hamadan = new City("hamadan");
-        cities.add(hamadan);
-        City qazvin = new City("qazvin");
-        cities.add(qazvin);
-        City kermanshah = new City("kermanshah");
-        cities.add(kermanshah);
-        City alborz = new City("alborz");
-        cities.add(alborz);
-        City mazandaran = new City("mazandaran");
-        cities.add(mazandaran);
-        City tehran = new City("tehran");
-        cities.add(tehran);
-        City markazi = new City("markazi");
-        cities.add(markazi);
-        City lorestan = new City("lorestan");
-        cities.add(lorestan);
-        City ilam = new City("ilam");
-        cities.add(ilam);
-        City qom = new City("qom");
-        cities.add(qom);
-        City golestan = new City("golestan");
-        cities.add(golestan);
-        City isfahan = new City("isfahan");
-        cities.add(isfahan);
-        City khuzestan = new City("khuzestan");
-        cities.add(khuzestan);
-        City charmahal = new City("charmahaml");
-        cities.add(charmahal);
-        City kohkilo = new City("kohkilo");
-        cities.add(kohkilo);
-        City fars = new City("fars");
-        cities.add(fars);
-        City yazd = new City("yazd");
-        cities.add(yazd);
-        City southKhorasan = new City("southKhorasan");
-        cities.add(southKhorasan);
-        City northKhorasan = new City("northKhorasan");
-        cities.add(northKhorasan);
-        City razavi = new City("razavi");
-        cities.add(razavi);
-        City kerman = new City("kerman");
-        cities.add(kerman);
-        City hormozgan = new City("hormozgan");
-        cities.add(hormozgan);
-        City bushehr = new City("bushehr");
-        cities.add(bushehr);
-        City sistan = new City("sistan");
-        cities.add(sistan);
-        City semnan = new City("semnan");
-        cities.add(semnan);
-
-        azarGharbi.addHamsaye(azerbaijanSharghi, zanjan, kurdistan);
-        azerbaijanSharghi.addHamsaye(alborz, azarGharbi, zanjan);
-        gilan.addHamsaye(ardabil, mazandaran, zanjan, qazvin);
-        mazandaran.addHamsaye(gilan, golestan, alborz, tehran, semnan);
-        golestan.addHamsaye(mazandaran, northKhorasan, semnan);
-        razavi.addHamsaye(semnan, northKhorasan, southKhorasan);
-        semnan.addHamsaye(razavi, northKhorasan, golestan, mazandaran, tehran, qom, isfahan, southKhorasan);
-        tehran.addHamsaye(qom, semnan, mazandaran, alborz, markazi);
-        alborz.addHamsaye(tehran, qazvin, mazandaran, markazi);
-        zanjan.addHamsaye(qazvin, gilan, hamadan, kurdistan, azerbaijanSharghi, ardabil);
-        kurdistan.addHamsaye(azarGharbi, zanjan, hamadan, kermanshah);
-        hamadan.addHamsaye(kurdistan, qazvin, markazi, zanjan, lorestan, kermanshah);
-        markazi.addHamsaye(hamadan, qom, qazvin, alborz, tehran, lorestan, isfahan);
-        qom.addHamsaye(markazi, isfahan, semnan, tehran, alborz, qazvin, hamadan);
-        isfahan.addHamsaye(markazi, qom, semnan, southKhorasan, yazd, fars, charmahal, lorestan);
-        southKhorasan.addHamsaye(semnan, razavi, sistan, kerman, yazd, isfahan);
-        yazd.addHamsaye(isfahan, southKhorasan, kerman, fars);
-        charmahal.addHamsaye(lorestan, isfahan, kohkilo, khuzestan);
-        lorestan.addHamsaye(ilam, kermanshah, hamadan, markazi, isfahan, charmahal, khuzestan);
-        ilam.addHamsaye(kermanshah, lorestan, khuzestan);
-        khuzestan.addHamsaye(ilam, lorestan, charmahal, kohkilo, bushehr);
-        kohkilo.addHamsaye(khuzestan, charmahal, isfahan, fars, bushehr);
-        fars.addHamsaye(kohkilo, isfahan, yazd, kerman, hormozgan, bushehr);
-        kermanshah.addHamsaye(kurdistan, hamadan, lorestan, ilam);
-        kerman.addHamsaye(fars, yazd, southKhorasan, sistan, hormozgan);
-        sistan.addHamsaye(southKhorasan, kerman, hormozgan);
-        hormozgan.addHamsaye(kerman, sistan, fars);
-        bushehr.addHamsaye(khuzestan, kohkilo, fars, hormozgan);
+        azarGharbi.addAdjNode(azerbaijanSharghi, zanjan, kurdistan);
+        azerbaijanSharghi.addAdjNode(alborz, azarGharbi, zanjan);
+        gilan.addAdjNode(ardabil, mazandaran, zanjan, qazvin);
+        mazandaran.addAdjNode(gilan, golestan, alborz, tehran, semnan);
+        golestan.addAdjNode(mazandaran, northKhorasan, semnan);
+        razavi.addAdjNode(semnan, northKhorasan, southKhorasan);
+        semnan.addAdjNode(razavi, northKhorasan, golestan, mazandaran, tehran, qom, isfahan, southKhorasan);
+        tehran.addAdjNode(qom, semnan, mazandaran, alborz, markazi);
+        alborz.addAdjNode(tehran, qazvin, mazandaran, markazi);
+        zanjan.addAdjNode(qazvin, gilan, hamadan, kurdistan, azerbaijanSharghi, ardabil);
+        kurdistan.addAdjNode(azarGharbi, zanjan, hamadan, kermanshah);
+        hamadan.addAdjNode(kurdistan, qazvin, markazi, zanjan, lorestan, kermanshah);
+        markazi.addAdjNode(hamadan, qom, qazvin, alborz, tehran, lorestan, isfahan);
+        qom.addAdjNode(markazi, isfahan, semnan, tehran, alborz, qazvin, hamadan);
+        isfahan.addAdjNode(markazi, qom, semnan, southKhorasan, yazd, fars, charmahal, lorestan);
+        southKhorasan.addAdjNode(semnan, razavi, sistan, kerman, yazd, isfahan);
+        yazd.addAdjNode(isfahan, southKhorasan, kerman, fars);
+        charmahal.addAdjNode(lorestan, isfahan, kohkilo, khuzestan);
+        lorestan.addAdjNode(ilam, kermanshah, hamadan, markazi, isfahan, charmahal, khuzestan);
+        ilam.addAdjNode(kermanshah, lorestan, khuzestan);
+        khuzestan.addAdjNode(ilam, lorestan, charmahal, kohkilo, bushehr);
+        kohkilo.addAdjNode(khuzestan, charmahal, isfahan, fars, bushehr);
+        fars.addAdjNode(kohkilo, isfahan, yazd, kerman, hormozgan, bushehr);
+        kermanshah.addAdjNode(kurdistan, hamadan, lorestan, ilam);
+        kerman.addAdjNode(fars, yazd, southKhorasan, sistan, hormozgan);
+        sistan.addAdjNode(southKhorasan, kerman, hormozgan);
+        hormozgan.addAdjNode(kerman, sistan, fars);
+        bushehr.addAdjNode(khuzestan, kohkilo, fars, hormozgan);
 
 
-        int[] init = new int[cities.size()];
+        int[] init = new int[nodes.size()];
         Random random = new Random(System.currentTimeMillis());
         for (int i = 0; i < init.length; i++) {
-            init[i] = random.nextInt(4);
+            init[i] = random.nextInt(numberOfColors);
         }
         initialState = new State(init);
 
     }
 
-    public ArrayList<City> getCities() {
-        return cities;
+    public ArrayList<GraphNode> getNodes() {
+        return nodes;
     }
 
-    @Override
-    public State getInitialState() {
-        return initialState;
-    }
 
-    @Override
-    public ArrayList<State> getNeighbors(State state) {
-        ArrayList<State> neightbors = new ArrayList<>();
-        for (int i = 0; i < state.getColors().length; i++) {
-            for (int j = 0; j < state.getColors().length; j++) {
-                for (int i1 = 1; i1 < 4; i1++) {
-                    int[] newColors = state.getColors().clone();
-                    newColors[j] += i1;
-                    newColors[j] = newColors[j] % 4;
-                    State s = new State(newColors);
-                    neightbors.add(s);
-                }
-
-            }
-        }
-        return neightbors;
-    }
-
-    @Override
-    public double stateValue(State state) {
-
-        double val = 0;
-        int[] cols = state.getColors();
-        boolean flag = state instanceof Chromosome;
-        double m = 0;
-        for (int i = 0; i < cities.size(); i++) {
-            ArrayList<City> neighbors = cities.get(i).getHamsye();
-            for (int i1 = 0; i1 < neighbors.size(); i1++) {
-                m++;
-                if (flag) {
-                    Chromosome chromosome = (Chromosome) state;
-                    if (chromosome.getGens().charAt(i) != chromosome.getGens().charAt(i1)) {
-                        val++;
-                    }
-                } else {
-
-                    if (cols[i] != cols[i1]) {
-                        val++;
-                    }
-                }
-
-            }
-        }
-        return val / m ;
-    }
 }

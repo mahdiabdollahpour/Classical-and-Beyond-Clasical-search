@@ -30,7 +30,13 @@ public abstract class Search extends ProblemSolvingAgent {
     }
 
     protected void updateMaxNumebrOfStoredNodes() {
-        maxNumberOfStoredNodes = Math.max(maxNumberOfStoredNodes, frontier.size() + explored.size());
+        if (searchMethod) {
+            maxNumberOfStoredNodes = Math.max(maxNumberOfStoredNodes, frontier.size() + explored.size());
+
+        } else {
+            maxNumberOfStoredNodes = Math.max(maxNumberOfStoredNodes, frontier.size());
+
+        }
     }
 
     protected abstract ArrayList<Node> expand(Node node);
@@ -79,7 +85,7 @@ public abstract class Search extends ProblemSolvingAgent {
     }
 
     private Solution treeSearch() {
-        frontier = new ArrayList<>();
+
         frontier.add(new Node(p.getInitialState(), null, 0, 0));
         updateMaxNumebrOfStoredNodes();
         while (true) {

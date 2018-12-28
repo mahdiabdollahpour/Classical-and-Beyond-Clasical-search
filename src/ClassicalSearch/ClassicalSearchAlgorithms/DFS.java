@@ -34,7 +34,7 @@ public class DFS extends Search {
             Action action = actions.get(i);
             int pathCost = node.getPathCost() + action.getStepCost();
 
-            nodes.add(new Node(p.transitionModel(node.getState(), action), node, pathCost, node.getPathCost() + 1));
+            nodes.add(new Node(p.transitionModel(node.getState(), action), node, pathCost, 0));
         }
         return nodes;
     }

@@ -8,17 +8,19 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class SimulatedAnnealing extends LocalSearch {
-    public SimulatedAnnealing(Problem problem) {
+    public SimulatedAnnealing(Problem problem, double alpha) {
         super(problem);
+        this.alpha = alpha;
     }
 
     @Override
     public Solution getAnswer() {
         State current = problem.getInitialState();
         for (int i = 1; ; i++) {
-            double t = schedule(i);
-            if (t < Double.MIN_VALUE * 2) {
-                return new Solution(current, problem.stateValue(current),expandedStatesNumber,visitedStatesNumber);
+            double T = schedule(i);
+//            System.out.println(T);
+            if (T < 0.0000000001) {
+                return new Solution(current, problem.stateValue(current), expandedStatesNumber, visitedStatesNumber);
             }
             State next = getRandomNeighbor(current);
             expandedStatesNumber++;
@@ -27,7 +29,7 @@ public class SimulatedAnnealing extends LocalSearch {
             if (deltaE > 0) {
                 current = next;
             } else {
-                double prob = Math.exp(deltaE / (double) t);
+                double prob = Math.exp(deltaE / (double) T);
                 if (Math.random() < prob) {
                     current = next;
                 }
@@ -42,14 +44,15 @@ public class SimulatedAnnealing extends LocalSearch {
         ArrayList<State> neighbors = problem.getNeighbors(state);
 
         Random random = new Random(System.currentTimeMillis());
-        return neighbors.get(random.nextInt() % neighbors.size());
+        return neighbors.get(random.nextInt(neighbors.size()));
     }
 
-    private double t0 = 1;
+    private final double t0 = 1;
+    private double alpha;
 
     private double schedule(int i) {
         //TODO: implemet this
-        return t0 / (1 + Math.log(1 + i));
+        return t0 / (1 + alpha * i * i);
     }
 
 
