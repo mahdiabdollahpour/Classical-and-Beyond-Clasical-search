@@ -5,8 +5,8 @@ import LocalSearchs.LocalSearchAlgorithms.GeneticAlgorithm.Chromosome;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-    public abstract class Problem {
-        protected ArrayList<GraphNode> nodes;
+public abstract class Problem {
+    protected ArrayList<GraphNode> nodes;
 
 
     protected State initialState;
@@ -79,17 +79,19 @@ import java.util.Arrays;
         double m = 0;
         for (int i = 0; i < nodes.size(); i++) {
             ArrayList<GraphNode> neighbors = nodes.get(i).getAdjs();
-            for (int i1 = 0; i1 < neighbors.size(); i1++) {
-                m++;
-                if (flag) {
-                    Chromosome chromosome = (Chromosome) state;
-                    if (chromosome.getGens().charAt(i) != chromosome.getGens().charAt(i1)) {
-                        val++;
-                    }
-                } else {
-                    if (cols[i] != cols[i1]) {
+            for (int i1 = 0; i1 < nodes.size(); i1++) {
+                if (neighbors.contains(nodes.get(i1))) {
+                    m++;
+                    if (flag) {
+                        Chromosome chromosome = (Chromosome) state;
+                        if (chromosome.getGens().charAt(i) != chromosome.getGens().charAt(i1)) {
+                            val++;
+                        }
+                    } else {
+                        if (cols[i] != cols[i1]) {
 //                        System.out.println(i + "," + i1);
-                        val++;
+                            val++;
+                        }
                     }
                 }
 
@@ -99,6 +101,7 @@ import java.util.Arrays;
 //        System.out.println(val);
         return val / m;
     }
+
     public ArrayList<GraphNode> getNodes() {
         return nodes;
     }

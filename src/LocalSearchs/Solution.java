@@ -85,7 +85,7 @@ public class Solution {
     }
 
     public void showCharts() {
-        if(isGa) {
+        if (isGa) {
             double XAxis[] = new double[maxs.length];
             for (int i = 0; i < XAxis.length; i++) {
                 XAxis[i] = i + 1;
@@ -94,7 +94,7 @@ public class Solution {
             new SwingWrapper(QuickChart.getChart("Best Fitness", "n", "fitness", "best fitness", XAxis, maxs)).displayChart();
             new SwingWrapper(QuickChart.getChart("Avg Fitness", "n", "fitness", "avg fitness", XAxis, avgs)).displayChart();
             new SwingWrapper(QuickChart.getChart("Worst Fitness", "n", "fitness", "worst fitness", XAxis, mins)).displayChart();
-        }else {
+        } else {
             System.out.println("This Option is for GA answer");
         }
 
@@ -102,17 +102,18 @@ public class Solution {
 
     @Override
     public String toString() {
-        StringBuilder s = new StringBuilder("").append("Solution{" +
+        StringBuilder s = new StringBuilder("").append(
                 "state=" + state + "\n" +
-                ", score=" + score + "\n");
+                        "score=" + score + "\n");
         if (isGa) {
-            s.append(", maxs=" + Arrays.toString(maxs) + "\n" +
-                    ", mins=" + Arrays.toString(mins) + "\n" +
-                    ", avgs=" + Arrays.toString(avgs) + "\n" +
-                    ", iterationsTillOptimum=" + iterationsTillOptimum + "\n" + '}');
+            s.append(
+//                    "maxs=" + Arrays.toString(maxs) + "\n" +
+//                    "mins=" + Arrays.toString(mins) + "\n" +
+//                    "avgs=" + Arrays.toString(avgs) + "\n" +
+                    "iterationsTillOptimum=" + iterationsTillOptimum + "\n");
         } else {
-            s.append(", expandedStatesNumber=" + expandedStatesNumber + "\n" +
-                    ", visitedStatesNumber=" + visitedStatesNumber + "\n" + "}");
+            s.append("expandedStatesNumber=" + expandedStatesNumber + "\n" +
+                    "visitedStatesNumber=" + visitedStatesNumber + "\n");
         }
         return s.toString();
     }

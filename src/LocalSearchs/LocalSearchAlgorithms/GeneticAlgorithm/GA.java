@@ -152,7 +152,7 @@ public class GA {
                 maxVal = val;
             }
         }
-        return new Solution(maxState, maxVal, true);
+        return new Solution(maxState, problem.stateValue(maxState), true);
     }
 
 
