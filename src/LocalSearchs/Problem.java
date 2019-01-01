@@ -24,9 +24,15 @@ public abstract class Problem {
 
     protected static class GraphNode {
         private String name;
+        private int idx;
 
-        public GraphNode(String name) {
+        public int getIdx() {
+            return idx;
+        }
+
+        public GraphNode(String name,int idx) {
             this.name = name;
+            this.idx = idx;
             adjs = new ArrayList<>();
         }
 
@@ -79,24 +85,25 @@ public abstract class Problem {
         double m = 0;
         for (int i = 0; i < nodes.size(); i++) {
             ArrayList<GraphNode> neighbors = nodes.get(i).getAdjs();
-            for (int i1 = 0; i1 < nodes.size(); i1++) {
-                if (neighbors.contains(nodes.get(i1))) {
-                    m++;
-                    if (flag) {
-                        Chromosome chromosome = (Chromosome) state;
-                        if (chromosome.getGens().charAt(i) != chromosome.getGens().charAt(i1)) {
-                            val++;
-                        }
-                    } else {
-                        if (cols[i] != cols[i1]) {
+            for (int i1 = 0; i1 < neighbors.size(); i1++) {
+                int otherIdx = neighbors.get(i1).getIdx();
+                m++;
+                if (flag) {
+                    Chromosome chromosome = (Chromosome) state;
+
+                    if (chromosome.getGens().charAt(i) != chromosome.getGens().charAt(otherIdx)) {
+                        val++;
+                    }
+                } else {
+                    if (cols[i] != cols[otherIdx]) {
 //                        System.out.println(i + "," + i1);
-                            val++;
-                        }
+                        val++;
                     }
                 }
-
             }
+
         }
+
 //        System.out.println(m);
 //        System.out.println(val);
         return val / m;
@@ -105,6 +112,7 @@ public abstract class Problem {
     public ArrayList<GraphNode> getNodes() {
         return nodes;
     }
+    public abstract void initToRandom();
 
 
 }

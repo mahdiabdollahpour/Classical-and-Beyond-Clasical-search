@@ -14,12 +14,13 @@ public class RandomRestartHC extends LocalSearch {
 
     @Override
     public Solution getAnswer() {
-        SimpleHC hc = new SimpleHC(problem);
         double bestScore = 0;
         Solution best = null;
+        SimpleHC hc = new SimpleHC(problem);
 
         // TODO: handel number of visited and ... -> done
         for (int i = 0; i < times; i++) {
+            problem.initToRandom();
             Solution solution = hc.getAnswer();
 
             visitedStatesNumber += solution.getVisitedStatesNumber();

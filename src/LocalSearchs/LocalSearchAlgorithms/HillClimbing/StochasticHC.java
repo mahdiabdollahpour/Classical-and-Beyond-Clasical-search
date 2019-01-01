@@ -13,6 +13,7 @@ public class StochasticHC extends SimpleHC {
     }
 
     protected State chooseNode(ArrayList<State> neighbors, State now) {
+        visitedStatesNumber += neighbors.size();
         double nowVal = problem.stateValue(now);
         ArrayList<State> goodStates = new ArrayList<>();
         for (int i = 0; i < neighbors.size(); i++) {

@@ -6,17 +6,17 @@ import java.util.Random;
 public class StarGraphColoring extends Problem {
     public StarGraphColoring() {
         super(3);
-        GraphNode a1 = new GraphNode("a1");
-        GraphNode a2 = new GraphNode("a2");
-        GraphNode a3 = new GraphNode("a3");
-        GraphNode a4 = new GraphNode("a4");
-        GraphNode a5 = new GraphNode("a5");
-        GraphNode a6 = new GraphNode("a6");
-        GraphNode a7 = new GraphNode("a7");
-        GraphNode a8 = new GraphNode("a8");
-        GraphNode a9 = new GraphNode("a9");
-        GraphNode a10 = new GraphNode("a10");
-        GraphNode a11 = new GraphNode("a11");
+        GraphNode a1 = new GraphNode("a1", 0);
+        GraphNode a2 = new GraphNode("a2", 1);
+        GraphNode a3 = new GraphNode("a3", 2);
+        GraphNode a4 = new GraphNode("a4", 3);
+        GraphNode a5 = new GraphNode("a5", 4);
+        GraphNode a6 = new GraphNode("a6", 5);
+        GraphNode a7 = new GraphNode("a7", 6);
+        GraphNode a8 = new GraphNode("a8", 7);
+        GraphNode a9 = new GraphNode("a9", 8);
+        GraphNode a10 = new GraphNode("a10", 9);
+        GraphNode a11 = new GraphNode("a11", 10);
         nodes = new ArrayList<>();
         nodes.add(a1);
         nodes.add(a2);
@@ -44,14 +44,18 @@ public class StarGraphColoring extends Problem {
         a11.addAdjNode(a9, a10, a4);
 
 
+        initToRandom();
+
+    }
+
+
+    @Override
+    public void initToRandom() {
         int[] init = new int[nodes.size()];
         Random random = new Random(System.currentTimeMillis());
         for (int i = 0; i < init.length; i++) {
             init[i] = random.nextInt(numberOfColors);
         }
         initialState = new State(init);
-
     }
-
-
 }

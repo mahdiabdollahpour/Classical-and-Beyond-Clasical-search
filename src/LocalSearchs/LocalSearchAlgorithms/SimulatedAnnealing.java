@@ -23,14 +23,15 @@ public class SimulatedAnnealing extends LocalSearch {
                 return new Solution(current, problem.stateValue(current), expandedStatesNumber, visitedStatesNumber);
             }
             State next = getRandomNeighbor(current);
-            expandedStatesNumber++;
             visitedStatesNumber += 1;
             double deltaE = problem.stateValue(next) - problem.stateValue(current);
             if (deltaE > 0) {
+                expandedStatesNumber++;
                 current = next;
             } else {
                 double prob = Math.exp(deltaE / (double) T);
                 if (Math.random() < prob) {
+                    expandedStatesNumber++;
                     current = next;
                 }
             }

@@ -16,8 +16,6 @@ public class State {
 
     @Override
     public String toString() {
-        return "State{" +
-                "colors=" + Arrays.toString(colors) +
-                '}';
+        return "colors=" + Arrays.toString(colors);
     }
 }

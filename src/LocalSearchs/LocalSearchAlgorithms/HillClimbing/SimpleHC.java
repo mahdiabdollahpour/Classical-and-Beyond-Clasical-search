@@ -20,6 +20,7 @@ public class SimpleHC extends LocalSearch {
     protected State chooseNode(ArrayList<State> neighbors, State now) {
         double maxVal = problem.stateValue(now);
         State maxState = null;
+        visitedStatesNumber += neighbors.size();
         for (int i = 0; i < neighbors.size(); i++) {
             double val = problem.stateValue(neighbors.get(i));
             if (val > maxVal) {
@@ -35,7 +36,7 @@ public class SimpleHC extends LocalSearch {
         while (true) {
             ArrayList<State> neighbors = problem.getNeighbors(current);
             expandedStatesNumber++;
-            visitedStatesNumber += neighbors.size();
+
             State next = chooseNode(neighbors, current);
             if (next == null) {
                 return new Solution(current, problem.stateValue(current), expandedStatesNumber, visitedStatesNumber);
