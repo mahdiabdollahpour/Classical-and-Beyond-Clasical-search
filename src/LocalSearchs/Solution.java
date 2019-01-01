@@ -90,6 +90,7 @@ public class Solution {
             for (int i = 0; i < XAxis.length; i++) {
                 XAxis[i] = i + 1;
             }
+
             new SwingWrapper(QuickChart.getChart("Best Fitness", "n", "fitness", "best fitness", XAxis, maxs)).displayChart();
             new SwingWrapper(QuickChart.getChart("Avg Fitness", "n", "fitness", "avg fitness", XAxis, avgs)).displayChart();
             new SwingWrapper(QuickChart.getChart("Worst Fitness", "n", "fitness", "worst fitness", XAxis, mins)).displayChart();

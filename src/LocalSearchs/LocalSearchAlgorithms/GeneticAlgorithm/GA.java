@@ -15,16 +15,23 @@ public class GA {
     private ArrayList<Chromosome> initialPopulation;
     private int stringLength;
     private Random random = new Random(System.currentTimeMillis());
-    private int k = 0;
+    private int tornumentSize = 0;
 
     private double fitnessFunction(Chromosome chromosome) {
         return problem.stateValue(chromosome);
 
     }
 
+    public void printConf() {
+        System.out.print("mutationRate : " + mutationRate);
+        System.out.print(", populationSize : " + populationSize);
+        System.out.print(", tornumentSize : " + tornumentSize);
+        System.out.println(", numberOfGenerations : " + numberOfGenerations);
+    }
+
     private Chromosome tornumentSelection(ArrayList<Chromosome> chromosomes) {
         ArrayList<Chromosome> gp = new ArrayList<>();
-        for (int i = 0; i < k; i++) {
+        for (int i = 0; i < tornumentSize; i++) {
             Chromosome chromosome = null;
             do {
                 int r = random.nextInt(chromosomes.size());
@@ -65,25 +72,28 @@ public class GA {
         return new Chromosome(stringBuilder);
     }
 
-    public GA(Problem problem, int populationSize, double mutationRate, int stringLength, int k) {
+    public GA(Problem problem, int populationSize, double mutationRate, int tornumentSize) {
         this.problem = problem;
         this.populationSize = populationSize;
         this.mutationRate = mutationRate;
-        this.stringLength = stringLength;
-        this.k = k;
+        this.stringLength = problem.getNodes().size();
+        this.tornumentSize = tornumentSize;
         initialPopulation = new ArrayList<>();
         for (int i = 0; i < populationSize; i++) {
             initialPopulation.add(getRandomChor());
         }
     }
 
-    public Solution getAnswer(int t) {
+    private int numberOfGenerations;
+
+    public Solution getAnswer(int numberOfGenerations) {
+        this.numberOfGenerations = numberOfGenerations;
         ArrayList<Chromosome> population = initialPopulation;
-        double[] mins = new double[t];
-        double[] maxs = new double[t];
-        double[] avgs = new double[t];
+        double[] mins = new double[numberOfGenerations];
+        double[] maxs = new double[numberOfGenerations];
+        double[] avgs = new double[numberOfGenerations];
         int tillOp = -1;
-        for (int i = 0; i < t; i++) {
+        for (int i = 0; i < numberOfGenerations; i++) {
             ArrayList<Chromosome> newPopulation = new ArrayList<>();
             for (int j = 0; j < populationSize; j++) {
                 Chromosome x = tornumentSelection(population);

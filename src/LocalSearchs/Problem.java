@@ -5,10 +5,13 @@ import LocalSearchs.LocalSearchAlgorithms.GeneticAlgorithm.Chromosome;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public abstract class Problem {
+    public abstract class Problem {
+        protected ArrayList<GraphNode> nodes;
+
+
     protected State initialState;
 
-    protected ArrayList<GraphNode> nodes;
+
     protected int numberOfColors;
 
     public int getNumberOfColors() {
@@ -96,4 +99,9 @@ public abstract class Problem {
 //        System.out.println(val);
         return val / m;
     }
+    public ArrayList<GraphNode> getNodes() {
+        return nodes;
+    }
+
+
 }

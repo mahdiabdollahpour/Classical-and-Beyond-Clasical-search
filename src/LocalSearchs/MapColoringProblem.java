@@ -112,9 +112,5 @@ public class MapColoringProblem extends Problem {
 
     }
 
-    public ArrayList<GraphNode> getNodes() {
-        return nodes;
-    }
-
 
 }

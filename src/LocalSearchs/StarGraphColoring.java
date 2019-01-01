@@ -31,16 +31,16 @@ public class StarGraphColoring extends Problem {
         nodes.add(a11);
 
 
-        a1.addAdjNode(a2, a3);
+        a1.addAdjNode(a2, a3, a9, a10);
         a2.addAdjNode(a1, a5, a4);
         a3.addAdjNode(a1, a4, a6);
         a4.addAdjNode(a2, a3, a7, a11, a8);
-        a5.addAdjNode(a2, a8);
-        a6.addAdjNode(a3, a7);
+        a5.addAdjNode(a2, a8, a6, a10);
+        a6.addAdjNode(a3, a7, a5, a9);
         a7.addAdjNode(a6, a10, a4);
         a8.addAdjNode(a5, a4, a9);
-        a9.addAdjNode(a8, a11);
-        a10.addAdjNode(a7, a11);
+        a9.addAdjNode(a8, a11, a6, a1);
+        a10.addAdjNode(a7, a11, a1, a5);
         a11.addAdjNode(a9, a10, a4);
 
 
