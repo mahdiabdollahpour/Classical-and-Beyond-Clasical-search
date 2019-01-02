@@ -13,7 +13,7 @@ public class Node implements Comparable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Node node = (Node) o;
-        return state.getName().equals(node.getState().getName()) && compareValue==node.compareValue;
+        return state.getName().equals(node.getState().getName()) && compareValue == node.compareValue;
     }
 
     public int getCompareValue() {

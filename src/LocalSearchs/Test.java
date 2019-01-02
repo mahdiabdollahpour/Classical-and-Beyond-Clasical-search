@@ -12,10 +12,10 @@ import LocalSearchs.Solution;
 import LocalSearchs.StarGraphColoring;
 
 public class Test {
-
     public static void main(String[] args) {
-        StarGraphColoring p = new StarGraphColoring();
+
 //        Object solver;
+        StarGraphColoring p = new StarGraphColoring();
         LocalSearch solver;
         solver = new SimulatedAnnealing(p,1.0);
 //        solver = new GA(p, 1000, 0.02,2);

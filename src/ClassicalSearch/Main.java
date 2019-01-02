@@ -9,14 +9,14 @@ import ClassicalSearch.Problems.Problem1;
 
 public class Main {
     public static void main(String[] args) {
-        boolean mode = false;
+        boolean mode = true;
         Problem p = new Problem1();
         Solution solution;
         ProblemSolvingAgent s;
-        s = new BFS(p, mode);
-        solution = (s).search();
-        System.out.println("BFS");
-        System.out.println(solution);
+//        s = new BFS(p, mode);
+//        solution = (s).search();
+//        System.out.println("BFS");
+//        System.out.println(solution);
 
 //        s = new DFS(p, mode);
 //        System.out.println("DFS");
@@ -28,19 +28,19 @@ public class Main {
         System.out.println("Unifrom Cost");
         System.out.println(solution);
 
-
-        s = new IterativeDeepeningDFS(p, mode);
-        solution = (s).search();
-        System.out.println("Iterative");
-        System.out.println(solution);
-        s = new GreedyBestFirst(p, mode);
-        solution = (s).search();
-        System.out.println("Greedy");
-        System.out.println(solution);
-        s = new AStar(p, mode);
-        solution = (s).search();
-        System.out.println("A*");
-        System.out.println(solution);
+//
+//        s = new IterativeDeepeningDFS(p, mode);
+//        solution = (s).search();
+//        System.out.println("Iterative");
+//        System.out.println(solution);
+//        s = new GreedyBestFirst(p, mode);
+//        solution = (s).search();
+//        System.out.println("Greedy");
+//        System.out.println(solution);
+//        s = new AStar(p, mode);
+//        solution = (s).search();
+//        System.out.println("A*");
+//        System.out.println(solution);
 
 
     }
